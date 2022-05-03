@@ -8,25 +8,31 @@ const test = document.querySelectorAll('.hero__brand-item:nth-child(n+7)')
 const test2 = document.querySelectorAll('.hero__brand-item:nth-child(n+9)')
 
 
-
-if (window.matchMedia("(max-width: 320px)").matches) {
-    brand.classList.add('hidden')
-    swipers.classList.remove('hidden')
+window.onresize = () => {
+    const width = window.innerWidth
+    if (width < 420) {
+        brand.classList.add('hidden')
+        swipers.classList.remove('hidden')
+    } else {
+        brand.classList.remove('hidden')
+        swipers.classList.add('hidden')
+    }
 }
+
 
 
 btnLink.addEventListener('click', () => {
     if (window.matchMedia("(max-width: 768px) and (min-width: 321px)").matches) {
         if (btnLink.textContent === 'Скрыть') {
             for (let item of test) {
-                item.style.display = "none"
+                item.classList.add('hidden')
             }
             btnLink.textContent = 'Показать'
             btnImg.classList.add('change')
             
         } else {
             for (let item of test) {
-                item.style.display = "flex"
+                item.classList.remove('hidden')
             }
             btnLink.textContent = 'Скрыть'
             btnImg.classList.remove('change')

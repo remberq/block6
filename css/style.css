@@ -63,9 +63,9 @@ body {
     margin-right: 32px;
 }
 
-.hero__brand-item:nth-child(n+9) {
-    display: none;
-}
+/*.hero__brand-item:nth-child(n+9) {*/
+/*    display: none;*/
+/*}*/
 
 .hero__brand-item:not(:nth-child(n+9)) {
     margin-bottom: 16px;
@@ -126,9 +126,9 @@ body {
         margin-right: 24px;
     }
 
-    .hero__brand-item:nth-child(n+7) {
-        display: none;
-    }
+    /*.hero__brand-item:nth-child(n+7) {*/
+    /*    display: none;*/
+    /*}*/
 
     .hero__brand-item:not(:nth-child(n+10)) {
         margin-bottom: 16px;
