@@ -28,47 +28,50 @@ body {
 .container {
     max-width: 1120px;
     margin: 0 auto;
-    background-color: #F2F2F2;
+
     overflow: hidden;
+
+    background-color: #F2F2F2;
 }
 
 .hero__heading {
-    text-transform: uppercase;
     padding-top: 16px;
     padding-left: 32px;
+
+    text-transform: uppercase;
 }
 
 .hero__brand-list {
-    padding-top: 40px;
+    padding-top: 35px;
 }
 
 .hero__brand-items {
     display: flex;
     flex-wrap: wrap;
-    padding-left: 32px;
+
+    padding-top: 5px;
+    padding-left: 5px;
+    max-width: 1088px;
+    height: 176px;
+
+    overflow: hidden;
+    margin-left: 27px;
 }
 
 .hero__brand-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 240px;
+
+    width: 22.05%;
+    min-width: 204px;
     height: 72px;
+    margin-right: 2.94%;
+    margin-bottom: 16px;
 
     background-color: white;
     border-radius: 6px;
-}
-
-.hero__brand-item:not(:nth-child(4n)) {
-    margin-right: 32px;
-}
-
-/*.hero__brand-item:nth-child(n+9) {*/
-/*    display: none;*/
-/*}*/
-
-.hero__brand-item:not(:nth-child(n+9)) {
-    margin-bottom: 16px;
+    transition: background-color .5s, transform .5s, box-shadow .5s;
 }
 
 .hero__brand-logo {
@@ -83,65 +86,76 @@ body {
 .hero__show-link {
     margin-left: 32px;
     padding-left: 16px;
-    margin-top: 46px;
-    margin-bottom: 14px;
+    margin-top: 8px;
+    margin-bottom: 34px;
 
-    background-image: url("../img/icon.png");
+    background-image: url("../img/icondown.png");
     background-size: 7px;
     background-repeat: no-repeat;
     background-position: center left;
 }
 
 .change {
-    background-image: url("../img/icondown.png");
-    margin-top: 24px;
-    margin-bottom: 34px;
+    margin-top: 30px;
+    margin-bottom: 14px;
+
+    background-image: url("../img/icon.png");
 }
 
 .hidden {
     display: none;
 }
 
-.hero__brand-btn:hover, .hero__brand-logo:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
 
 /* Media */
 
 
-@media (max-width: 768px) and (min-width: 321px) {
-
-    .hero__brand-item {
-        width: 224px;
-        height: 72px;
-    }
-
-    .hero__brand-item:not(:nth-child(4n)) {
-        margin-right: 0;
-    }
-
-    .hero__brand-item:not(:nth-child(3n)) {
-        margin-right: 24px;
-    }
-
-    /*.hero__brand-item:nth-child(n+7) {*/
-    /*    display: none;*/
-    /*}*/
-
-    .hero__brand-item:not(:nth-child(n+10)) {
-        margin-bottom: 16px;
-    }
-
-    .hero__brand-items {
-        padding-left: 24px;
+@media (min-width: 471px) {
+    .hero__brand-item:hover {
+        background-color: #d0eaf5;
+        cursor: pointer;
+        transform: scale(1.05);
+        box-shadow: 3px 3px 5px #918e8e;
     }
 }
 
-@media (max-width: 320px){
+@media (max-width: 768px) and (min-width: 321px) {
+
+    .hero__brand-items {
+        margin-left: 24px;
+    }
+
+    .hero__brand-item {
+        width: 30%;
+        min-width: 205px;
+        height: 72px;
+        margin-right: calc(24 * 100% / 768);
+    }
+}
+
+@media (max-width: 470px) {
+
     .swiper {
+        position: relative;
         margin: 0 auto;
+        height: 100px;
+    }
+
+    .swiper-slide-next {
+        opacity: 0.5;
+    }
+
+    .swiper-slide-active > .hero__brand-item {
+        background-color: #d0eaf5;
+    }
+
+    .swiper-slide > .hero__brand-item {
+        transition: opacity 1s, background-color 1s;
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        top: 80px;
     }
 
     .hero__heading {
@@ -152,17 +166,13 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0;
+
         margin-left: 16px;
         width: 240px;
         height: 72px;
 
         background-color: white;
         border-radius: 6px;
-    }
-
-    .hero__brand-item:not(:nth-child(n+9)) {
-        margin: 0 0 35px 16px;
     }
 
     .hero__show-link {
@@ -174,9 +184,10 @@ body {
         height: 196px;
         margin: 0 auto;
 
+        border-right: 8px solid white;
+
         background-color: #F2F2F2;
         overflow: hidden;
-        border-right: 5px solid white;
         box-shadow: inset -11px 0 25px white;
     }
 }
